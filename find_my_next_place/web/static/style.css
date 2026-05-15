@@ -1,0 +1,5 @@
+body{font-family:system-ui,sans-serif;max-width:840px;margin:2rem auto;padding:0 1rem;color:#222}
+.card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
+.rationale{color:#555;font-style:italic}
+.actions button{margin-right:.5rem}
+pre.raw{white-space:pre-wrap;background:#f6f6f6;padding:1rem;border-radius:6px}
