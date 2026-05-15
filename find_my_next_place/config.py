@@ -59,6 +59,12 @@ class LLMConfig(BaseModel):
     api_key: str
 
 
+class SourceConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    rss_url: str | None = None
+    search_url: str | None = None
+
+
 class AppConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
     search: SearchConfig
@@ -67,6 +73,7 @@ class AppConfig(BaseModel):
     schedule_minutes: int
     notify: NotifyConfig
     llm: LLMConfig
+    source_urls: dict[str, SourceConfig] = {}
 
 
 def _resolve_env(value):

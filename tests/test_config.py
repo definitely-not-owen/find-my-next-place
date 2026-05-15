@@ -72,3 +72,14 @@ def test_missing_env_var_errors(tmp_path, monkeypatch):
     data["llm"]["api_key"] = "env:MISSING_VAR"
     with pytest.raises(ConfigError, match="MISSING_VAR"):
         load_config(write_config(tmp_path, data))
+
+
+def test_loads_source_urls(tmp_path):
+    data = base_data()
+    data["source_urls"] = {
+        "craigslist": {"rss_url": "https://nyc.example/rss"},
+        "zillow": {"search_url": "https://example.com/nyc"},
+    }
+    cfg = load_config(write_config(tmp_path, data))
+    assert cfg.source_urls["craigslist"].rss_url == "https://nyc.example/rss"
+    assert cfg.source_urls["zillow"].search_url == "https://example.com/nyc"

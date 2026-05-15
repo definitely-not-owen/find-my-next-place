@@ -19,8 +19,16 @@ log = logging.getLogger(__name__)
 
 
 def build_scrapers(cfg: AppConfig) -> list:
-    registry = {"craigslist": CraigslistScraper, "zillow": ZillowScraper}
-    return [registry[name]() for name in cfg.sources]
+    out = []
+    for name in cfg.sources:
+        url_cfg = cfg.source_urls.get(name)
+        if name == "craigslist":
+            rss = url_cfg.rss_url if url_cfg else None
+            out.append(CraigslistScraper(rss_url=rss))
+        elif name == "zillow":
+            search = url_cfg.search_url if url_cfg else None
+            out.append(ZillowScraper(search_url=search))
+    return out
 
 
 def build_search_arg(cfg: AppConfig):
