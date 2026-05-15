@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="http://purl.org/rss/1.0/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <item rdf:about="https://sfbay.craigslist.org/sfc/apa/d/example/7700000001.html">
+    <title>$3200 / 1br - Sunny 1BR Mission near BART</title>
+    <link>https://sfbay.craigslist.org/sfc/apa/d/example/7700000001.html</link>
+    <description>Bright 1BR with in-unit laundry. Hardwood floors. 16th St BART.</description>
+    <dc:date>2026-05-14T08:30:00-07:00</dc:date>
+  </item>
+  <item rdf:about="https://sfbay.craigslist.org/sfc/apa/d/example/7700000002.html">
+    <title>$2800 / 2br - Hayes Valley 2BR top floor</title>
+    <link>https://sfbay.craigslist.org/sfc/apa/d/example/7700000002.html</link>
+    <description>Top-floor 2BR. No washer/dryer. Quiet block.</description>
+    <dc:date>2026-05-14T09:00:00-07:00</dc:date>
+  </item>
+</rdf:RDF>
