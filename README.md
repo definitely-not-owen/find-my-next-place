@@ -5,7 +5,9 @@ filter, asks Claude whether each survivor matches my taste, and pings me on
 Telegram when it finds something worth a viewing.
 
 My friend [Gabor wrote a great post](https://gaborcsapo.substack.com/p/what-does-apartment-hunting-in-sf)
-about doing this for himself in SF, with [code on GitHub](https://github.com/gaborcsapo/ai-real-estate-agent).
+about doing this for himself in SF.
+
+
 This is my version — same architecture, narrower scope, configurable for any
 US city, and with a tiny localhost review queue instead of a Telegram-only flow.
 
