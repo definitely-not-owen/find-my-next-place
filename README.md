@@ -1,17 +1,16 @@
 # find-my-next-place
 
-A small apartment-hunting pipeline that scrapes rental sites, applies a rule
+After looking for an apartment the past couple of months, I have determined that it is possibly the worst time in history to try to rent a reasonably-priced place in SF.
+
+This is A small apartment-hunting pipeline that scrapes rental sites, applies a rule
 filter, asks Claude whether each survivor matches my taste, and pings me on
 Telegram when it finds something worth a viewing.
 
 My friend [Gabor wrote a great post](https://gaborcsapo.substack.com/p/what-does-apartment-hunting-in-sf)
-about doing this for himself in SF.
-
-
-This is my version — same architecture, narrower scope, configurable for any
+about doing this for himself; this is my version — same architecture, narrower scope, configurable for any
 US city, and with a tiny localhost review queue instead of a Telegram-only flow.
 
-The premise Gabor nailed in his writeup is that **AI is great at surfacing
+The key here, and something Gabor nailed in his writeup, is that **AI is great at surfacing
 candidates and useless at winning apartments**. Viewings, applications, and
 landlord rapport still depend entirely on you showing up. This tool aims to do
 nothing more than save you the hours of refreshing Craigslist.
