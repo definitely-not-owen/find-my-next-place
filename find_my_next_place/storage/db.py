@@ -37,7 +37,10 @@ class Database:
         for i, sql in enumerate(MIGRATIONS, start=1):
             if i <= current:
                 continue
-            if "schema_version" in sql and current == 0 and i <= len(MIGRATIONS):
+            if "CREATE TABLE schema_version" in sql:
+                cur.execute(
+                    "INSERT OR IGNORE INTO schema_version(version) VALUES (?)", (i,)
+                )
                 continue
             cur.executescript(sql)
             cur.execute("INSERT INTO schema_version(version) VALUES (?)", (i,))

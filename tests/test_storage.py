@@ -60,3 +60,12 @@ def test_notifications_dedup(db):
     assert len(pending) == 1
     db.record_notification(pending[0].listing_id, "telegram")
     assert list(db.pending_notifications("telegram")) == []
+
+
+def test_database_can_be_reopened(tmp_path):
+    """Regression: opening the same database file twice must not crash."""
+    path = tmp_path / "reopen.db"
+    db1 = Database(path)
+    db1.upsert_listing(make_listing())
+    db2 = Database(path)  # this used to crash with "table schema_version already exists"
+    assert db2.seen_keys("craigslist") == {("craigslist", "a1")}
