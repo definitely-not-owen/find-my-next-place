@@ -220,6 +220,8 @@ docs/
 # Streamlit
 .streamlit/secrets.toml
 
+docs/*
+
 # find-my-next-place
 data/
 .venv/
