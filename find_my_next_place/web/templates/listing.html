@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ listing.title }}</h2>
+<p>${{ listing.price }} · {{ listing.beds }}BR / {{ listing.baths }}BA · {{ listing.sqft or "?" }} sqft</p>
+<p><a href="{{ listing.url }}" target="_blank">Open source listing</a></p>
+<p class="rationale">{{ verdict.llm_verdict }}: {{ verdict.llm_reasons }}</p>
+<pre class="raw">{{ listing.raw_text }}</pre>
+{% endblock %}

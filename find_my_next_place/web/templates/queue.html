@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Review queue ({{ listings|length }})</h2>
+{% for l in listings %}
+  <article class="card">
+    <h3><a href="/listing/{{ l.id }}">{{ l.title }}</a></h3>
+    <p>${{ l.price }} · {{ l.beds }}BR / {{ l.baths }}BA · <a href="{{ l.url }}" target="_blank">source</a></p>
+    <p class="rationale">{{ l.llm_verdict }}: {{ l.llm_reasons }}</p>
+    <form method="post" action="/listing/{{ l.id }}/action" class="actions">
+      <button name="action" value="approved">Approve</button>
+      <button name="action" value="snoozed">Snooze 7d</button>
+      <button name="action" value="rejected">Reject</button>
+    </form>
+  </article>
+{% else %}
+  <p>Queue is empty.</p>
+{% endfor %}
+{% endblock %}

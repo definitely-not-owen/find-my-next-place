@@ -1,0 +1,31 @@
+{
+  "search": {
+    "city": "San Francisco, CA",
+    "neighborhoods": ["Mission", "Hayes Valley", "Castro"],
+    "radius_miles_from": null,
+    "min_price": 2000,
+    "max_price": 3800,
+    "min_bedrooms": 1,
+    "max_bedrooms": 2
+  },
+  "preferences": {
+    "must_haves": ["in-unit laundry", "natural light"],
+    "deal_breakers": ["top floor", "north-facing", "no windows in bedroom"]
+  },
+  "sources": ["craigslist", "zillow"],
+  "schedule_minutes": 30,
+  "notify": {
+    "telegram": {
+      "bot_token": "env:TELEGRAM_BOT_TOKEN",
+      "chat_id": "env:TELEGRAM_CHAT_ID"
+    }
+  },
+  "llm": {
+    "model": "claude-haiku-4-5-20251001",
+    "api_key": "env:ANTHROPIC_API_KEY"
+  },
+  "source_urls": {
+    "craigslist": {"rss_url": "https://sfbay.craigslist.org/search/apa?format=rss"},
+    "zillow": {"search_url": "https://www.zillow.com/san-francisco-ca/rentals/"}
+  }
+}
