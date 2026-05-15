@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# find-my-next-place
+data/
+.venv/
+*.egg-info/
+.pytest_cache/

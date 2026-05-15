@@ -1,0 +1,30 @@
+[project]
+name = "find-my-next-place"
+version = "0.1.0"
+description = "Apartment-hunting pipeline."
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.5",
+  "httpx>=0.27",
+  "shapely>=2.0",
+  "anthropic>=0.39",
+  "apscheduler>=3.10",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "jinja2>=3.1",
+  "feedparser>=6.0",
+  "camoufox[geoip]>=0.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "httpx[testing]"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["find_my_next_place*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
